@@ -42,9 +42,9 @@ export default {
     };
   },
   methods: {
-    send() {
-      axios
-        .post("http://127.0.0.1:8000/api/comment", {
+    async send() {
+      await axios
+        .awaitpost("http://127.0.0.1:8000/api/comment", {
           share_id: this.id,
           user_id: this.$store.state.user.id,
           content: this.content,
@@ -58,8 +58,8 @@ export default {
           });
         });
     },
-    comment() {
-      axios
+    async comment() {
+      await axios
         .get("http://127.0.0.1:8000/api/shares/" + this.id)
         .then((response) => {
           this.data = response.data.comment;
