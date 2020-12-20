@@ -44,7 +44,7 @@ export default {
   methods: {
     async send() {
       await axios
-        .awaitpost("http://127.0.0.1:8000/api/comment", {
+        .post("http://127.0.0.1:8000/api/comment", {
           share_id: this.id,
           user_id: this.$store.state.user.id,
           content: this.content,
