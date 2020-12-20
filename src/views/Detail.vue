@@ -14,7 +14,7 @@
         </div>
         <div class="message" v-for="(comment, index) in data" :key="index">
           <div class="flex">
-            <p class="name">{{ comment.comment.user_id }}</p>
+            <p class="name">{{ comment.comment.share_id }}</p>
           </div>
           <div>
             <p class="text">{{ comment.comment.content }}</p>
